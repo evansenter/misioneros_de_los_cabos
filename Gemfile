@@ -19,6 +19,7 @@ gem "pony"                               # PONY MAIL FUCK YES
 gem "newrelic_rpm"                       # Track issues
 gem "kaminari"                           # Model pagination
 gem "formtastic"                         # Make forms eas(ier)
+gem "transloadit-rails"                  # Upload files to S3 without hitting dynos
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
