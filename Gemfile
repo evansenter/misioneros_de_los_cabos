@@ -50,6 +50,12 @@ end
 # Use unicorn as the app server
 gem 'unicorn'
 
+# PONY MAIL FUCK YES
+gem "pony"
+
+# Track issues
+gem 'newrelic_rpm'
+
 # Use Capistrano for deployment
 # gem 'capistrano', group: :development
 
