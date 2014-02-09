@@ -13,4 +13,10 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require bootstrap
+//= require transify
 //= require_tree .
+
+$(function() {
+  $("." + gon.current_tab + "_tab").addClass("active");
+})

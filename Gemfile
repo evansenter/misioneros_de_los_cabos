@@ -7,7 +7,7 @@ gem "mysql2"                             # Use MySQL as the database for ActiveR
 gem "devise"                             # Devise for authentication
 gem "haml-rails"                         # HAML generators
 gem "sass-rails", "~> 4.0.0"             # Use SCSS for stylesheets
-gem "bootstrap-sass", "~> 3.0.3.0"       # Bootstrap 3 for pretty things
+gem "bootstrap-sass", "~> 3.1.0"         # Bootstrap 3 for pretty things
 gem "uglifier", ">= 1.3.0"               # Use Uglifier as compressor for JavaScript assets
 gem "coffee-rails", "~> 4.0.0"           # Use CoffeeScript for .js.coffee assets and views
 gem "jquery-rails"                       # Use jquery as the JavaScript library
@@ -20,6 +20,8 @@ gem "newrelic_rpm"                       # Track issues
 gem "kaminari"                           # Model pagination
 gem "formtastic"                         # Make forms eas(ier)
 gem "transloadit-rails"                  # Upload files to S3 without hitting dynos
+gem "carmen-rails"
+gem "gon"
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.

@@ -1,0 +1,20 @@
+%nav.navbar.navbar-default{:role => "navigation"}
+  .navbar-header
+    %a.navbar-brand{:href => "#"} Misiones Del Cabo
+  .navbar-collapse
+    %ul.nav.navbar-nav
+      %li.photos_tab
+        %a{:href => "#"} Photos
+      %li.notices_tab
+        %a{:href => "#"} Notices
+      %li.documents_tab
+        %a{:href => "#"} Documents
+      %li.contacts_tab
+        %a{:href => "#"} Contacts
+    %form.navbar-form.navbar-right{:role => "search"}
+      .form-group
+        %input.form-control{:placeholder => "Email", :type => "text"}
+        %input.form-control{:placeholder => "Password", :type => "password"}
+      .btn-group
+        %button.btn.btn-default{:type => "submit"} Login
+        %button.btn.btn-default{:type => "submit"} Signup
