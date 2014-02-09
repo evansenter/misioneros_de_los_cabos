@@ -9,7 +9,6 @@ gem "haml-rails"                         # HAML generators
 gem "sass-rails", "~> 4.0.0"             # Use SCSS for stylesheets
 gem "bootstrap-sass", "~> 3.1.0"         # Bootstrap 3 for pretty things
 gem "uglifier", ">= 1.3.0"               # Use Uglifier as compressor for JavaScript assets
-gem "coffee-rails", "~> 4.0.0"           # Use CoffeeScript for .js.coffee assets and views
 gem "jquery-rails"                       # Use jquery as the JavaScript library
 gem "turbolinks"                         # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem "jbuilder", "~> 1.2"                 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
@@ -20,8 +19,9 @@ gem "newrelic_rpm"                       # Track issues
 gem "kaminari"                           # Model pagination
 gem "formtastic"                         # Make forms eas(ier)
 gem "transloadit-rails"                  # Upload files to S3 without hitting dynos
-gem "carmen-rails"
-gem "gon"
+gem "carmen-rails"                       # Addresses
+gem "gon"                                # Send data from controller to JS
+gem "jquery-turbolinks"                  # onReady event plays nice with turbolinks
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.

@@ -1,20 +1,18 @@
 %nav.navbar.navbar-default{:role => "navigation"}
   .navbar-header
-    %a.navbar-brand{:href => "#"} Misiones Del Cabo
+    = link_to("Misiones Del Cabo", root_path, class: "navbar-brand")
   .navbar-collapse
     %ul.nav.navbar-nav
       %li.photos_tab
-        %a{:href => "#"} Photos
+        = link_to("Photos", photos_path)
       %li.notices_tab
-        %a{:href => "#"} Notices
+        = link_to("Notices", notices_path)
       %li.documents_tab
-        %a{:href => "#"} Documents
+        = link_to("Documents", documents_path)
       %li.contacts_tab
-        %a{:href => "#"} Contacts
+        = link_to("Contacts", contacts_path)
     %form.navbar-form.navbar-right{:role => "search"}
       .form-group
         %input.form-control{:placeholder => "Email", :type => "text"}
         %input.form-control{:placeholder => "Password", :type => "password"}
-      .btn-group
-        %button.btn.btn-default{:type => "submit"} Login
-        %button.btn.btn-default{:type => "submit"} Signup
+      = render "shared/login"
