@@ -1,9 +1,17 @@
 %h1 Contacts
 
 .row
-  .col-md-6
-    = image_tag("placeholder_contact.png", size: "140x140", class: "image-circle")
-    %h3 Column 1
-  .col-md-6
-    = image_tag("placeholder_contact.png", size: "140x140", class: "image-circle")
-    %h3 Column 2
+  .col-md-4.col-md-offset-1.text-center
+    = render partial: "contact"
+  .col-md-4.col-md-offset-2.text-center
+    = render partial: "contact"
+.row.top-buffer-xl
+  .col-md-4.col-md-offset-1.text-center
+    = render partial: "contact"
+  .col-md-4.col-md-offset-2.text-center
+    = render partial: "contact"
+.row.top-buffer-xl
+  .col-md-4.col-md-offset-1.text-center
+    = render partial: "contact"
+  .col-md-4.col-md-offset-2.text-center
+    = render partial: "contact"
