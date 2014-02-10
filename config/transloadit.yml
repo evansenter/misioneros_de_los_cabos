@@ -5,21 +5,18 @@ development:
   # use "v1.0.0" if you need IE6 support (using jQuery < 1.9)
   jquery_sdk_version: 'latest'
   auth:
-    key     : 'YOUR_KEY'
-    secret  : 'YOUR_SECRET' # this is optional, but highly recommended, https://transloadit.com/docs/authentication
+    key     : <%= Figaro.env.transloadit_auth_key %>
+    secret  : <%= Figaro.env.transloadit_secret_key %> # this is optional, but highly recommended, https://transloadit.com/docs/authentication
     duration: 1800 # 30 minute validity period for signed upload forms
 
   templates:
-    # template identified by template_id
-    s3_store: 'S3_STORE_TEMPLATE_ID'
-
-    # template defined inline
-    image_resize:
+    save_pdf_to_s3:
       steps:
-        resize:
-          robot : '/image/resize'
-          width : 320
-          height: 200
+        store:
+          robot : "/s3/store"
+          bucket: <%= Figaro.env.s3_bucket_name %>
+          key:    <%= Figaro.env.aws_access_key_id %>
+          secret: <%= Figaro.env.aws_secret_access_key %>
 
 production:
   # the jquery_sdk version you want to use, read up on it here:

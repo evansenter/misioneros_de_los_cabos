@@ -7,12 +7,8 @@
         = link_to("Photos", photos_path)
       %li.notices_tab
         = link_to("Notices", notices_path)
-      %li.documents_tab
+      %li.uploads_tab
         = link_to("Documents", documents_path)
       %li.contacts_tab
         = link_to("Contacts", contacts_path)
-    %form.navbar-form.navbar-right{:role => "search"}
-      .form-group
-        %input.form-control{:placeholder => "Email", :type => "text"}
-        %input.form-control{:placeholder => "Password", :type => "password"}
-      = render "shared/login"
+    = render "shared/login"

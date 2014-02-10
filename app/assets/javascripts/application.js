@@ -11,13 +11,15 @@
 // about supported directives.
 //
 //= require jquery
-//= require jquery.turbolinks
 //= require jquery_ujs
-//= require turbolinks
 //= require bootstrap
 //= require transify
+//= require underscore
 //= require_tree .
 
-$(function() {
+var select_tab = function() {
   $("." + gon.current_tab + "_tab").addClass("active");
-})
+};
+
+$(document).ready(select_tab);
+$(document).on("page:load", select_tab);

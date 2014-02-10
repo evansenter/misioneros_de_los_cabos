@@ -10,7 +10,6 @@ gem "sass-rails", "~> 4.0.0"             # Use SCSS for stylesheets
 gem "bootstrap-sass", "~> 3.1.0"         # Bootstrap 3 for pretty things
 gem "uglifier", ">= 1.3.0"               # Use Uglifier as compressor for JavaScript assets
 gem "jquery-rails"                       # Use jquery as the JavaScript library
-gem "turbolinks"                         # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem "jbuilder", "~> 1.2"                 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem "rails_12factor", group: :production # Heroku requirements
 gem "unicorn"                            # Use unicorn as the app server
@@ -21,7 +20,12 @@ gem "formtastic"                         # Make forms eas(ier)
 gem "transloadit-rails"                  # Upload files to S3 without hitting dynos
 gem "carmen-rails"                       # Addresses
 gem "gon"                                # Send data from controller to JS
-gem "jquery-turbolinks"                  # onReady event plays nice with turbolinks
+gem "figaro"                             # Env variables
+gem "underscore-rails"                   # Underscore JS
+
+group :development do
+  gem "awesome_print" # Prettier things
+end
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.

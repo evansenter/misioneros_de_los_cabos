@@ -1,3 +1,9 @@
-# Place all the behaviors and hooks related to the matching controller here.
-# All this logic will automatically be available in application.js.
-# You can use CoffeeScript in this file: http://coffeescript.org/
+$(function() {
+  $("form :input.required").change(function(element) {
+    var filled_out = _.all($("form .required"), function(el) { return $(el).val() != "" });
+  
+    if (filled_out) {
+      $("#upload_form_button").removeAttr("disabled");
+    }
+  })
+});

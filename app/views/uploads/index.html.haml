@@ -1,0 +1,8 @@
+%h1
+  Documents
+  %small Minutes and HOA / ARC documents
+  
+.row
+  .col-md-8.col-md-offset-2
+    - if user_signed_in?
+      = link_to("New document", new_upload_path, class: "btn btn-success")

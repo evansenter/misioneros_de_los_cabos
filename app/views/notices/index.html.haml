@@ -1,0 +1,8 @@
+%h1
+  Notices
+  %small Messages from the gods
+  
+.row
+  .col-md-8.col-md-offset-2
+    - if user_signed_in?
+      = link_to("New notice", new_notice_path, class: "btn btn-success")

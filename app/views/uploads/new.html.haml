@@ -1,2 +1,24 @@
-%h1 Uploads#new
-%p Find me in app/views/uploads/new.html.haml
+.row
+  .col-md-8.col-md-offset-2
+    %h1
+      Upload a file
+  
+    = form_for(@upload, html: { id: "upload", class: "form-horizontal" }) do |form|
+      = transloadit :save_pdf_to_s3
+  
+      .form-group
+        = form.label :title, "Title", class: "col-sm-2 control-label"
+        .col-sm-10
+          = form.text_field :title, class: "form-control required", placeholder: "Document title"
+  
+      .form-group
+        = form.label :file, "File to upload", class: "col-sm-2 control-label"
+        .col-sm-10
+          = form.file_field :file, class: "required"
+          %p.help-block Please select a document on your computer to upload to the website.
+  
+      .form-group
+        .col-sm-10.col-sm-offset-2
+          = form.submit "Upload", id: "upload_form_button", class: "btn btn-success"
+  
+    = transloadit_jquerify :upload

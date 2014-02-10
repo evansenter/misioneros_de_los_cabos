@@ -8,6 +8,7 @@ MisionesDelCabo::Application.routes.draw do
   # root 'welcome#index'
   root :to => "home#index"
   get "contacts" => "home#contacts"
+  get "documents" => "uploads#index"
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
@@ -17,10 +18,9 @@ MisionesDelCabo::Application.routes.draw do
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
-  resources :uploads
+  resources :uploads, only: [:index, :new, :create, :destroy]
   resources :photos
   resources :notices
-  resources :documents
 
   # Example resource route with options:
   #   resources :products do
