@@ -14,11 +14,11 @@
       .form-group
         = form.label :file, "File to upload", class: "col-sm-2 control-label"
         .col-sm-10
-          = form.file_field :file, class: "required"
+          = form.file_field :file, class: "required", accept: "application/pdf"
           %p.help-block Please select a document on your computer to upload to the website.
   
       .form-group
         .col-sm-10.col-sm-offset-2
-          = form.submit "Upload", id: "upload_form_button", class: "btn btn-success"
+          = form.submit "Upload", id: "upload_form_button", class: "btn btn-success", disabled: "disabled"
   
     = transloadit_jquerify :upload

@@ -13,13 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap
-//= require transify
 //= require underscore
+//= require transify
+//= require nav
 //= require_tree .
-
-var select_tab = function() {
-  $("." + gon.current_tab + "_tab").addClass("active");
-};
-
-$(document).ready(select_tab);
-$(document).on("page:load", select_tab);
