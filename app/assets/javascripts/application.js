@@ -16,4 +16,5 @@
 //= require underscore
 //= require transify
 //= require nav
+//= require form_controls
 //= require_tree .

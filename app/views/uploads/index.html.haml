@@ -2,7 +2,7 @@
   Documents
   %small Minutes and HOA / ARC documents
   
-.row
-  .col-md-8.col-md-offset-2
-    - if user_signed_in?
+- if user_signed_in?
+  .row
+    .col-md-2.col-md-offset-10
       = link_to("New document", new_upload_path, class: "btn btn-success")

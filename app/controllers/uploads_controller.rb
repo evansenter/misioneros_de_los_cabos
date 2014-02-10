@@ -10,7 +10,7 @@ class UploadsController < ApplicationController
   end
 
   def create
-    @upload = Upload.new(user: current_user, title: params[:upload][:title])
+    @upload = current_user.uploads.build(title: params[:upload][:title])
     
     if params[:transloadit] && params[:transloadit][:ok] == "ASSEMBLY_COMPLETED"
       @upload.s3_url = params[:transloadit][:results][":original"].first[:ssl_url] rescue nil

@@ -22,6 +22,7 @@ gem "carmen-rails"                       # Addresses
 gem "gon"                                # Send data from controller to JS
 gem "figaro"                             # Env variables
 gem "underscore-rails"                   # Underscore JS
+gem "faker"
 
 group :development do
   gem "awesome_print" # Prettier things

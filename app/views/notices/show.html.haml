@@ -1,0 +1,5 @@
+.row
+  .col-md-8.col-md-offset-2
+    %h1= @notice.title
+    = simple_format @notice.body
+    = link_to "<span class='glyphicon glyphicon-chevron-left'></span>".html_safe, notices_path, class: "btn btn-default"
