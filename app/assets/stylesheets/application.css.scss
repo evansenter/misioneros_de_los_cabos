@@ -16,11 +16,15 @@
 @import "bootstrap";
 @import "bootstrap/theme";
 
+body {
+  padding-top: 70px;
+  padding-bottom: 30px;
+}
+
 .footer {
   border-top: 1px solid #eee;
   margin-top: 40px;
   padding-top: 20px;
-  padding-bottom: 20px;
 }
 
 .top-buffer { 
