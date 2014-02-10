@@ -28,6 +28,8 @@ group :development do
   gem "awesome_print" # Prettier things
 end
 
+gem "rails_serve_static_assets", group: [:production] # Serve assets in production
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem "sdoc", require: false
