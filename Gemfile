@@ -11,7 +11,6 @@ gem "bootstrap-sass", "~> 3.1.0"         # Bootstrap 3 for pretty things
 gem "uglifier", ">= 1.3.0"               # Use Uglifier as compressor for JavaScript assets
 gem "jquery-rails"                       # Use jquery as the JavaScript library
 gem "jbuilder", "~> 1.2"                 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem "rails_12factor", group: :production # Heroku requirements
 gem "unicorn"                            # Use unicorn as the app server
 gem "pony"                               # PONY MAIL FUCK YES
 gem "newrelic_rpm"                       # Track issues
@@ -28,7 +27,9 @@ group :development do
   gem "awesome_print" # Prettier things
 end
 
-gem "rails_serve_static_assets", group: [:production] # Serve assets in production
+group :production do
+  gem "rails_12factor" # Heroku requirements
+end
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
