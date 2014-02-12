@@ -1,5 +1,6 @@
 class NoticesController < ApplicationController
-  before_filter :authenticate_user!, except: [:index, :show]
+  before_filter :require_authorized_user!
+  before_filter :require_admin!, except: [:index, :show]
   before_filter :find_post, only: [:show, :edit, :update, :destroy]
   
   def index

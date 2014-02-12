@@ -22,4 +22,18 @@ class ApplicationController < ActionController::Base
       ]
     }
   end
+  
+  def require_authorized_user!
+    unless user_signed_in? && current_user.authorized?
+      flash.alert = "Your account must be authorized before doing that."
+      redirect_to :back
+    end
+  end
+  
+  def require_admin!
+    unless user_signed_in? && current_user.admin?
+      flash.alert = "You do not have privilidges to do that."
+      redirect_to :back
+    end
+  end
 end

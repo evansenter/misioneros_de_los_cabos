@@ -21,11 +21,13 @@ gem "carmen-rails"                       # Addresses
 gem "gon"                                # Send data from controller to JS
 gem "figaro"                             # Env variables
 gem "underscore-rails"                   # Underscore JS
-gem "faker"
+gem "snail"                              # Format addresses
+
 
 group :development do
   gem "awesome_print" # Prettier things
   gem "quiet_assets"  # Unicorns are loud
+  gem "faker"         # Fake data
 end
 
 group :production do

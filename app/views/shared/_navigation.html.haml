@@ -6,10 +6,15 @@
       %ul.nav.navbar-nav
         %li.photos_tab
           = link_to("Photos", photos_path)
-        %li.notices_tab
-          = link_to("Notices", notices_path)
-        %li.uploads_tab
-          = link_to("Documents", documents_path)
+        - if authorized_user_signed_in?
+          %li.notices_tab
+            = link_to("Notices", notices_path)
+        - if authorized_user_signed_in?
+          %li.uploads_tab
+            = link_to("Documents", documents_path)
         %li.contacts_tab
           = link_to("Committees", committees_path)
+        - if admin_signed_in?
+          %li.admin_tab
+            = link_to("Admin", manage_users_path)
       = render "shared/login"

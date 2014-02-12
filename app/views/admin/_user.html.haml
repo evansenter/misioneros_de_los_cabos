@@ -1,0 +1,12 @@
+%tr
+  %td= user.email
+  %td= user.contact_info.unit_number
+  %td= user.contact_info.full_address
+  %td= user.contact_info.phone_number
+  %td= user.role.capitalize
+  %td
+    = link_to "Deauth.", set_user_role_path(user_id: user.id, role: "unauthorized")
+    &nbsp;|&nbsp;
+    = link_to "Auth.", set_user_role_path(user_id: user.id, role: "authorized")
+    &nbsp;|&nbsp;
+    = link_to "Admin", set_user_role_path(user_id: user.id, role: "admin")

@@ -13,8 +13,10 @@ MisionesDelCabo::Application.routes.draw do
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
   root to: "home#index"
-  get "committees" => "home#committees"
-  get "documents"  => "uploads#index"
+  get "committees"              => "home#committees"
+  get "documents"               => "uploads#index"
+  get "manage_users"            => "admin#manage_users"
+  get "set_role/:user_id/:role" => "admin#set_user_role", as: "set_user_role"
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
@@ -25,7 +27,7 @@ MisionesDelCabo::Application.routes.draw do
   # Example resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
   resources :uploads, only: [:index, :new, :create, :destroy]
-  resources :photos
+  resources :photos, only: [:index]
   resources :notices
 
   # Example resource route with options:

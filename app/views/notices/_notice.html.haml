@@ -2,7 +2,7 @@
   =link_to notice.title, notice_path(notice)
 = simple_format(notice.body[0, 500].strip + "...")
 
-- if user_signed_in?
+- if admin_signed_in?
   .row
     .col-md-2.col-md-offset-10.pull-right
       .btn-group

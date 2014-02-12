@@ -1,0 +1,17 @@
+%h1
+  Manage users
+  %small Change user permissions
+  
+%table.table.table-hover.table_condensed
+  %thead
+    %tr
+      %th Email
+      %th Unit Number
+      %th Address
+      %th Phone Number
+      %th Permissions
+      %th Set Role
+  = render partial: "user", collection: @users
+
+.row
+  = paginate @users

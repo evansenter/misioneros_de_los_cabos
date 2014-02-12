@@ -1,5 +1,5 @@
 class UploadsController < ApplicationController
-  before_filter :authenticate_user!
+  before_filter :require_authorized_user!
   
   include Transloadit::Rails::ParamsDecoder
 
