@@ -1,0 +1,8 @@
+- type        ||= :text_field
+- placeholder ||= ""
+- error_field ||= field
+
+.form-group{ class: (resource.errors[error_field].present? ? "has-error" : "") }
+  = form.label field, class: "col-sm-2 control-label"
+  .col-sm-10
+    = form.send(type, field, class: "form-control", placeholder: placeholder)

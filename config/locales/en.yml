@@ -20,4 +20,18 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  activerecord:
+    attributes:
+      user:
+        password_confirmation: "Confirm"
+      contact_info:
+        address_1:    "Address 1"
+        address_2:    "Address 2"
+        city:         "City"
+        state:        "State"
+        zip:          "Zipcode"
+        country:      "Country"
+        phone_number: "Phone number"
+        unit_number:  "Unit number"
+      upload:
+        s3_url: "File to upload"

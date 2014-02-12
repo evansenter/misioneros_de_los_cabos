@@ -3,7 +3,9 @@ class UploadsController < ApplicationController
   
   include Transloadit::Rails::ParamsDecoder
 
-  def index; end
+  def index
+    @uploads = Upload.order("created_at DESC").page(params[:page])
+  end
 
   def new
     @upload = Upload.new

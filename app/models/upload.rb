@@ -1,7 +1,7 @@
 class Upload < ActiveRecord::Base
   belongs_to :user
   
-  validates_presence_of :title, :s3_url
-  validates_uniqueness_of :title, :s3_url
+  validates :title, presence: true, uniqueness: true, length: { minimum: 10 }
+  validates :s3_url, presence: true, uniqueness: true
   validates_associated :user
 end

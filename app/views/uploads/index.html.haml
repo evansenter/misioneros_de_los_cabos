@@ -2,6 +2,10 @@
   Documents
   %small Minutes and HOA / ARC documents
   
+.row
+  .col-md-8.col-md-offset-2
+    = render partial: "upload", collection: @uploads
+  
 - if user_signed_in?
   .row
     .col-md-2.col-md-offset-10

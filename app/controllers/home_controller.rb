@@ -7,7 +7,7 @@ class HomeController < ApplicationController
     gon.current_tab = "home"
   end
   
-  def contacts
-    gon.current_tab = "contacts"
+  def committees
+    gon.current_tab = "committees"
   end
 end

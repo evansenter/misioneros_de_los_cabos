@@ -1,14 +1,20 @@
 MisionesDelCabo::Application.routes.draw do
-  devise_for :users
+  devise_for :users, has_one: :contact_info
+  
+  devise_scope :user do
+    get    "register", to: "devise/registrations#new"
+    get    "login",    to: "devise/sessions#new"
+    delete "logout",   to: "devise/sessions#destroy"
+  end
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
-  root :to => "home#index"
-  get "contacts" => "home#contacts"
-  get "documents" => "uploads#index"
+  root to: "home#index"
+  get "committees" => "home#committees"
+  get "documents"  => "uploads#index"
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

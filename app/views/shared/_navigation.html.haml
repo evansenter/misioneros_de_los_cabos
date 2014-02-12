@@ -1,7 +1,7 @@
 %nav.navbar.navbar-default.navbar-fixed-top{ role: "navigation" }
   .container
     .navbar-header
-      = link_to("Misiones Del Cabo", root_path, class: "navbar-brand")
+      = link_to("Misioneros de Los Cabos", root_path, class: "navbar-brand")
     .navbar-collapse.collapse
       %ul.nav.navbar-nav
         %li.photos_tab
@@ -11,5 +11,5 @@
         %li.uploads_tab
           = link_to("Documents", documents_path)
         %li.contacts_tab
-          = link_to("Contacts", contacts_path)
+          = link_to("Committees", committees_path)
       = render "shared/login"

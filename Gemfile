@@ -25,6 +25,7 @@ gem "faker"
 
 group :development do
   gem "awesome_print" # Prettier things
+  gem "quiet_assets"  # Unicorns are loud
 end
 
 group :production do
