@@ -11,6 +11,7 @@
       = render partial: "shared/form_field", locals: { form: form, resource: resource, field: :password_confirmation, type: :password_field }
       
       = form.fields_for :contact_info do |contact_form|
+        = render partial: "shared/form_field", locals: { form: contact_form, resource: resource, field: :full_name,    error_field: :"contact_info.full_name" }
         = render partial: "shared/form_field", locals: { form: contact_form, resource: resource, field: :address_1,    error_field: :"contact_info.address_1" }
         = render partial: "shared/form_field", locals: { form: contact_form, resource: resource, field: :address_2,    error_field: :"contact_info.address_2" }
         = render partial: "shared/form_field", locals: { form: contact_form, resource: resource, field: :city,         error_field: :"contact_info.city" }

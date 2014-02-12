@@ -1,5 +1,12 @@
-= image_tag("placeholder_contact.png", size: "140x140", class: "img-circle")
-%h3 Some Person
-%p Voluptatem iure beatae doloremque eos. Molestias dolore quasi cupiditate ipsa dolores. Corporis vero explicabo. Repudiandae neque suscipit. Consequatur maxime error vel labore eveniet dolores aut. Eveniet fuga ea est voluptatem dolor recusandae. Amet tenetur labore aut dolorem reiciendis ut.
-%p
-  = mail_to "example@example.com"
+- name        ||= ""
+- unit_number ||= ""
+- title       ||= "Member"
+- email       ||= ""
+
+%h4
+  = name
+  %small
+    = "##{unit_number}" if unit_number.present?
+%h5
+  = title
+%p= mail_to email

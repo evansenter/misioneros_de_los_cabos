@@ -16,6 +16,8 @@ class User < ActiveRecord::Base
   validates :role, inclusion: { in: ROLES }
   validates_associated :contact_info, message: "is not complete"
   
+  delegate :full_name, to: :contact_info
+  
   ROLES.each do |role|
     define_method(:"#{role}?") do
       self.role == role || self.role == "admin"
