@@ -5,10 +5,10 @@
   .col-md-8.col-md-offset-2
     = render partial: "upload", collection: @uploads
     
-    %ul#document_tab_header.nav.nav-tabs
+    %ul#document_tab_header.nav.nav-pills
       - Upload::CATEGORIES.each do |title, id|
         %li
-          %a{ href: "##{id}", "data-toggle" => "tab" }= title
+          %a{ href: "##{id}", "data-toggle" => "pill" }= title
                     
     #document_tab_content.tab-content
       - Upload::CATEGORIES.each do |title, id|
