@@ -18,13 +18,18 @@
 
 body {
   padding-top: 70px;
-  padding-bottom: 30px;
+}
+
+.light-blue-gradient {
+  background-image: linear-gradient(to bottom, #fff 0%, #eaf0f7 100%);
+  background-repeat: repeat-x;
 }
 
 .footer {
   border-top: 1px solid #eee;
   margin-top: 40px;
   padding-top: 20px;
+  padding-bottom: 30px;
 }
 
 .bottom-buffer-sm { 
