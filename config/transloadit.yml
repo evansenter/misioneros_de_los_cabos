@@ -25,18 +25,15 @@ production:
   # use "v1.0.0" if you need IE6 support (using jQuery < 1.9)
   jquery_sdk_version: 'latest'
   auth:
-    key     : 'YOUR_KEY'
-    secret  : 'YOUR_SECRET' # this is optional, but highly recommended, https://transloadit.com/docs/authentication
+    key     : <%= ENV["TRANSLOADIT_AUTH_KEY"] %>
+    secret  : <%= ENV["TRANSLOADIT_SECRET_KEY"] %> # this is optional, but highly recommended, https://transloadit.com/docs/authentication
     duration: 1800 # 30 minute validity period for signed upload forms
 
   templates:
-    # template identified by template_id
-    s3_store: 'S3_STORE_TEMPLATE_ID'
-
-    # template defined inline
-    image_resize:
+    save_pdf_to_s3:
       steps:
-        resize:
-          robot : '/image/resize'
-          width : 320
-          height: 200
+        store:
+          robot : "/s3/store"
+          bucket: <%= ENV["S3_BUCKET_NAME"] %>
+          key:    <%= ENV["AWS_ACCESS_KEY_ID"] %>
+          secret: <%= ENV["AWS_SECRET_ACCESS_KEY"] %>
