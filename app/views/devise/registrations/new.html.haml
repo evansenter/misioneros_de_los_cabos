@@ -3,25 +3,42 @@
     - if resource.errors.any?
       = render partial: "shared/form_errors", locals: { errors: resource.errors }
     
-    %h2 Sign up
     - resource.build_contact_info unless resource.contact_info
-    = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { class: "form-horizontal" }) do |form|    
-      = render partial: "shared/form_field", locals: { form: form, resource: resource, field: :email,                 type: :email_field }
-      = render partial: "shared/form_field", locals: { form: form, resource: resource, field: :password,              type: :password_field }
-      = render partial: "shared/form_field", locals: { form: form, resource: resource, field: :password_confirmation, type: :password_field, title: "Confirm" }
+    = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { class: "form-horizontal" }) do |form|
+      %fieldset
+        %legend.lead Credentials
+        = render partial: "shared/form_field", locals: { form: form, resource: resource, field: :email, type: :email_field }    
+        .row
+          .col-md-6
+            = render partial: "shared/form_field_left", locals: { width: 4, form: form, resource: resource, field: :password, type: :password_field }
+          .col-md-6
+            = render partial: "shared/form_field_right", locals: { width: 4, form: form, resource: resource, field: :password_confirmation, type: :password_field, title: "Confirm" }
       
-      = form.fields_for :contact_info do |contact_form|
-        = render partial: "shared/form_field", locals: { form: contact_form, resource: resource, field: :full_name,    error_field: :"contact_info.full_name" }
-        = render partial: "shared/form_field", locals: { form: contact_form, resource: resource, field: :address_1,    error_field: :"contact_info.address_1" }
-        = render partial: "shared/form_field", locals: { form: contact_form, resource: resource, field: :address_2,    error_field: :"contact_info.address_2" }
-        = render partial: "shared/form_field", locals: { form: contact_form, resource: resource, field: :city,         error_field: :"contact_info.city" }
-        = render partial: "shared/form_field", locals: { form: contact_form, resource: resource, field: :state,        error_field: :"contact_info.state" }
-        = render partial: "shared/form_field", locals: { form: contact_form, resource: resource, field: :zip,          error_field: :"contact_info.zip" }
-        = render partial: "shared/form_field", locals: { form: contact_form, resource: resource, field: :country,      error_field: :"contact_info.country" }
-        = render partial: "shared/form_field", locals: { form: contact_form, resource: resource, field: :phone_number, error_field: :"contact_info.phone_number" }
-        = render partial: "shared/form_field", locals: { form: contact_form, resource: resource, field: :unit_number,  error_field: :"contact_info.unit_number" }
-
-        .form-group
-          .col-sm-12.text-right
-            = form.submit "Register", class: "btn btn-success"
-    
+        %legend.lead Contact Info
+        = form.fields_for :contact_info do |contact_form|
+          = render partial: "shared/form_field", locals: { form: contact_form, resource: resource, field: :full_name,    error_field: :"contact_info.full_name" }
+          = render partial: "shared/form_field", locals: { form: contact_form, resource: resource, field: :address_1,    error_field: :"contact_info.address_1" }
+          = render partial: "shared/form_field", locals: { form: contact_form, resource: resource, field: :address_2,    error_field: :"contact_info.address_2" }
+      
+          .row
+            .col-md-6
+              = render partial: "shared/form_field_left", locals: { width: 4, form: contact_form, resource: resource, field: :city, error_field: :"contact_info.city" }
+            .col-md-6
+              = render partial: "shared/form_field_right", locals: { width: 4, form: contact_form, resource: resource, field: :state, error_field: :"contact_info.state" }
+          
+          .row
+            .col-md-6
+              = render partial: "shared/form_field_left", locals: { width: 4, form: contact_form, resource: resource, field: :zip, error_field: :"contact_info.zip" }
+            .col-md-6
+              = render partial: "shared/form_field_right", locals: { width: 4, form: contact_form, resource: resource, field: :country, error_field: :"contact_info.country" }
+          
+          .row
+            .col-md-6
+              = render partial: "shared/form_field_left", locals: { width: 4, form: contact_form, resource: resource, field: :phone_number, error_field: :"contact_info.phone_number" }
+            .col-md-6
+              = render partial: "shared/form_field_right", locals: { width: 4, form: contact_form, resource: resource, field: :unit_number,  error_field: :"contact_info.unit_number" }
+        
+          .form-group
+            .col-md-10.text-right
+              = form.submit "Register", class: "btn btn-success"
+            
