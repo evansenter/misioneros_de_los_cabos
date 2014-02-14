@@ -26,7 +26,7 @@ en:
   activerecord:
     attributes:
       user:
-        password_confirmation: "Confirm"
+        password_confirmation: "Password confirmation"
       contact_info:
         full_name:    "Name"
         address_1:    "Address 1"
