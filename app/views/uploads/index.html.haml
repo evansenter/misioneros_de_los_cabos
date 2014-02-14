@@ -12,7 +12,8 @@
                     
     #document_tab_content.tab-content
       - Upload::CATEGORIES.each do |title, id|
-        .tab-pane.fade{ id: id } #{title} files will go here.
+        .tab-pane.fade{ id: id }
+          = render partial: "uploads_tab", locals: { title: title, id: id }
         
     :javascript
       $("ul#document_tab_header > li:first").addClass("active");

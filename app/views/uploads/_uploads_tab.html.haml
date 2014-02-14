@@ -1,0 +1,13 @@
+%table.table.table-hover.table_condensed.top-buffer
+  %thead
+    %tr
+      %th File
+      %th Uploaded
+      - if admin_signed_in?
+        %th Manage
+    - Upload.where(category: id).order("created_at DESC").map do |upload|
+      %tr
+        %td= link_to(upload.title, upload.s3_url, target: "_blank")
+        %td= upload.created_at.strftime('%B %e at %l:%M%p')
+        - if admin_signed_in?
+          %td= link_to "<span class='glyphicon glyphicon-remove'></span>".html_safe, upload_path(upload), class: "btn", method: :delete, data: { confirm: "Are you sure?" }
