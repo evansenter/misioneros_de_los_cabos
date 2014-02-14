@@ -28,6 +28,7 @@ en:
       user:
         password_confirmation: "Confirm"
       contact_info:
+        full_name:    "Name"
         address_1:    "Address 1"
         address_2:    "Address 2"
         city:         "City"

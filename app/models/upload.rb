@@ -1,7 +1,17 @@
 class Upload < ActiveRecord::Base
+  CATEGORIES = [
+    ["ARC Documents",     "arc_documents"],
+    ["Financial Reports", "financial_reports"],
+    ["HOA Documents",     "hoa_documents"],
+    ["Maintenance",       "maintenance"],
+    ["Minutes",           "minutes"],
+    ["Projects",          "projects"]
+  ]
+  
   belongs_to :user
   
-  validates :title, presence: true, uniqueness: true, length: { minimum: 10 }
-  validates :s3_url, presence: true, uniqueness: true
+  validates :title,    presence: true, uniqueness: true, length: { minimum: 10, if: "title.present?" }
+  validates :s3_url,   presence: true, uniqueness: true
+  validates :category, presence: true, inclusion: { in: CATEGORIES.map(&:last), if: "category.present?" }
   validates_associated :user
 end

@@ -11,6 +11,7 @@ class ApplicationController < ActionController::Base
   def configure_permitted_parameters
     devise_parameter_sanitizer.for(:sign_up) << {
       contact_info_attributes: [
+        :full_name,
         :address_1,
         :address_2,
         :city,

@@ -1,5 +1,6 @@
-%h2
+%h3
   =link_to notice.title, notice_path(notice)
+  %small= notice.created_at.strftime('%B %e at %l:%M%p')
 = simple_format(notice.body[0, 500].strip + "...")
 
 - if admin_signed_in?

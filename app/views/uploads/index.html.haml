@@ -1,10 +1,23 @@
 %h1
   Documents
-  %small Minutes and HOA / ARC documents
   
 .row
   .col-md-8.col-md-offset-2
     = render partial: "upload", collection: @uploads
+    
+    %ul#document_tab_header.nav.nav-tabs
+      - Upload::CATEGORIES.each do |title, id|
+        %li
+          %a{ href: "##{id}", "data-toggle" => "tab" }= title
+                    
+    #document_tab_content.tab-content
+      - Upload::CATEGORIES.each do |title, id|
+        .tab-pane.fade{ id: id } #{title} files will go here.
+        
+    :javascript
+      $("ul#document_tab_header > li:first").addClass("active");
+      $("#document_tab_content > div:first").addClass("in active");
+      
   
     - if admin_signed_in?
       .row

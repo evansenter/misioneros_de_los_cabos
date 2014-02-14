@@ -22,8 +22,7 @@ class UploadsController < ApplicationController
       flash.notice = "Your document has been created!"
       redirect_to documents_path
     else
-      flash.alert = ("<ul>%s</ul>" % @upload.errors.full_messages.inject("") { |string, message| string + ("<li>%s</li>" % message) }).gsub(/S3 url/, "File").html_safe
-      redirect_to new_upload_url
+      render "new"
     end
   end
   
