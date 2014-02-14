@@ -1,5 +1,5 @@
 %nav.navbar.navbar-default.navbar-fixed-top{ role: "navigation" }
-  .container-fluid
+  .container
     .navbar-header
       = link_to("Misioneros de Los Cabos", root_path, class: "navbar-brand")
     .navbar-collapse.collapse
@@ -12,6 +12,9 @@
         - if authorized_user_signed_in?
           %li.uploads_tab
             = link_to("Documents", documents_path)
+        - if authorized_user_signed_in?
+          %li.maintenance_fee_tab
+            = link_to("Maintenance Fee", maintenance_fee_path)
         %li.committees_tab
           = link_to("Committees", committees_path)
         - if admin_signed_in?

@@ -14,6 +14,7 @@ MisionesDelCabo::Application.routes.draw do
   # root 'welcome#index'
   root to: "home#index"
   get "committees"              => "home#committees"
+  get "maintenance_fee"         => "home#maintenance_fee"
   get "documents"               => "uploads#index"
   get "manage_users"            => "admin#manage_users"
   get "set_role/:user_id/:role" => "admin#set_user_role", as: "set_user_role"
