@@ -10,7 +10,7 @@ class Upload < ActiveRecord::Base
   
   belongs_to :user
   
-  validates :title,    presence: true, uniqueness: true, length: { minimum: 5, if: "title.present?" }
+  validates :title,    presence: true, length: { minimum: 5, if: "title.present?" }
   validates :s3_url,   presence: true, uniqueness: true
   validates :category, presence: true, inclusion: { in: CATEGORIES.map(&:last), if: "category.present?" }
   validates_associated :user
