@@ -5,6 +5,7 @@ class HomeController < ApplicationController
   
   def index
     gon.current_tab = "home"
+    @notices        = Notice.order("created_at DESC").limit(2)
   end
   
   def committees
