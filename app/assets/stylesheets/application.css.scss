@@ -28,8 +28,8 @@ html, body {
   margin: 0 auto -160px;
 }
 
-#wrap > .container {
-  padding: 60px 0 30px;
+#wrap > nav.navbar + .container {
+  padding: 70px 0 30px;
 }
 
 #push, #footer {
@@ -40,7 +40,7 @@ html, body {
   border-top: 1px solid #ddd;
   padding-top: 20px;
   padding-bottom: 30px;
-  background-image: linear-gradient(to top, #fff 0%, #f8f8f8 100%);
+  background-image: linear-gradient(to top, rgba(255,255,255,.5) 0%, rgba(248,248,248,.5) 100%);
   background-repeat: repeat-x;
 }
 
@@ -60,10 +60,17 @@ html, body {
   vertical-align: middle;
 }
 
-.navbar-header .navbar-brand, .carousel h1 {
+h1, h2, h3, h4, h5, h6 {
   font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
-  font-weight: 100;
+}
+
+.navbar-header .navbar-brand, .carousel h1 {
+  font-weight: 200;
   font-size: 1.5em;
+}
+
+ul.nav li a {
+  font-weight: 200;
 }
 
 .carousel .carousel-caption {
@@ -73,11 +80,28 @@ html, body {
 
 .carousel h1 {
   font-size: 3.5em;
-  letter-spacing: .1em;
+  letter-spacing: .05em;
+}
+
+.carousel .carousel-caption {
+  background: -moz-linear-gradient(left,  rgba(0,0,0,0.01) 0%, rgba(0,0,0,0.35) 35%, rgba(0,0,0,0.35) 50%, rgba(0,0,0,0.35) 65%, rgba(0,0,0,0) 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(0,0,0,0.01)), color-stop(35%,rgba(0,0,0,0.35)), color-stop(50%,rgba(0,0,0,0.35)), color-stop(65%,rgba(0,0,0,0.35)), color-stop(100%,rgba(0,0,0,0))); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(left,  rgba(0,0,0,0.01) 0%,rgba(0,0,0,0.35) 35%,rgba(0,0,0,0.35) 50%,rgba(0,0,0,0.35) 65%,rgba(0,0,0,0) 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(left,  rgba(0,0,0,0.01) 0%,rgba(0,0,0,0.35) 35%,rgba(0,0,0,0.35) 50%,rgba(0,0,0,0.35) 65%,rgba(0,0,0,0) 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(left,  rgba(0,0,0,0.01) 0%,rgba(0,0,0,0.35) 35%,rgba(0,0,0,0.35) 50%,rgba(0,0,0,0.35) 65%,rgba(0,0,0,0) 100%); /* IE10+ */
+  background: linear-gradient(to right,  rgba(0,0,0,0.01) 0%,rgba(0,0,0,0.35) 35%,rgba(0,0,0,0.35) 50%,rgba(0,0,0,0.35) 65%,rgba(0,0,0,0) 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#03000000', endColorstr='#00000000',GradientType=1 ); /* IE6-9 */
+  bottom: 0;
 }
 
 .carousel .carousel-control {
   width: 10%;
+  background: none;
+}
+
+.carousel ol.carousel-indicators {
+  bottom: 10px;
+  margin-bottom: 0;
 }
 
 .light-blue-gradient {

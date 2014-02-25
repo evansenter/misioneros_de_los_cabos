@@ -10,6 +10,8 @@
   %body{ role: "document" }
     #wrap
       = render "shared/navigation"
+      - if controller_name == "home" && action_name == "index"
+        = render partial: "carousel"
     
       .container{ role: "main" }
         = render "shared/flash"

@@ -2,14 +2,14 @@
   %ol.carousel-indicators
     - (1..5).each do |i|
       %li{ "data-target" => "#carousel-homepage", "data-slide-to" => 1, "class" => (i == 1 ? "active" : "") }
-    
+  
   .carousel-inner
     - (1..5).each do |i|
       .item{ "class" => (i == 1 ? "active" : "") }
-        = image_tag("carousel/carousel_#{i}.png")
+        = image_tag("carousel/carousel_#{i}.png", width: "100%")
         .carousel-caption
           %h1 Misioneros de Los Cabos
-      
+    
   %a.left.carousel-control{ "href" => "#carousel-homepage", "data-slide" => "prev" }
     %span.glyphicon.glyphicon-chevron-left
   %a.right.carousel-control{ "href" => "#carousel-homepage", "data-slide" => "next" }
