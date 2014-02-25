@@ -1,33 +1,46 @@
-.row
-  .col-md-8.col-md-offset-2
-    %h2 
-      Location
-      %small Courtesy of Google Maps
-    .flexible_container.top-buffer
-      %iframe{:frameborder => "0", :height => "600", :src => "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3675.4924594340782!2d-109.8916!3d22.8952!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x86af4b05e07332d5%3A0x1d97c31ed70a5b6d!2sMisiones+del+Cabo+Resort!5e0!3m2!1sen!2sus!4v1393356300749", :style => "border:0", :width => "800"}
-
-.row.top-buffer
-  .col-md-8.col-md-offset-2
-    %h2 
-      Photos
-      %small Pictures of facilities and staff
-    .picture_with_caption.top-buffer
-      = image_tag("hoa_office.jpg", class: "img-responsive bottom-buffer-sm")
-      %p.text-center.lead HOA Office
-    .picture_with_caption.top-buffer-xl
-      = image_tag("employees.jpg", class: "img-responsive bottom-buffer-sm")
-      %p.text-center.lead Our Staff
-    .picture_with_caption.top-buffer-xl
-      = image_tag("pepe_yuen.jpg", class: "img-responsive bottom-buffer-sm")
-      %p.text-center.lead Pepe Yuen
-    .picture_with_caption.top-buffer-xl
-      = image_tag("victor_gm.jpg", class: "img-responsive bottom-buffer-sm")
-      %p.text-center.lead
-        Victor (GM)
-        %small= mail_to("gmhoa.misiones@gmail.com")
-    .picture_with_caption.top-buffer-xl
-      = image_tag("gloria.jpg", class: "img-responsive bottom-buffer-sm")
-      %p.text-center.lead
-        Gloria (Billing)
-        %small= mail_to("misioneshoa.billing@gmail.com")
+.col-md-8.col-md-offset-2
+  %h2.top-buffer-xl
+    Photos
+    %small Pictures of facilities and staff
+  #carousel-photos.carousel.slide{ "data-ride" => "carousel" }
+    %ol.carousel-indicators
+      %li.active{ "data-target" => "#carousel-photos", "data-slide-to" => 0 }
+      %li{ "data-target" => "#carousel-photos", "data-slide-to" => 1 }
+      %li{ "data-target" => "#carousel-photos", "data-slide-to" => 2 }
+      %li{ "data-target" => "#carousel-photos", "data-slide-to" => 3 }
+      %li{ "data-target" => "#carousel-photos", "data-slide-to" => 4 }
+  
+    .carousel-inner
+      .item.active
+        = image_tag("hoa_office.jpg", height: 560)
+        .carousel-caption
+          %h2 HOA Office
+      .item
+        = image_tag("employees.jpg", height: 560)
+        .carousel-caption
+          %h2 Employees
+      .item
+        = image_tag("pepe_yuen.jpg")
+        .carousel-caption
+          %h2 Pepe Yuen
+      .item
+        = image_tag("victor_gm.jpg")
+        .carousel-caption
+          %h2 Victor (GM)
+          %small= mail_to("gmhoa.misiones@gmail.com")
+      .item
+        = image_tag("gloria.jpg")
+        .carousel-caption
+          %h2 Gloria (Billing)
+          %small= mail_to("misioneshoa.billing@gmail.com")
     
+    %a.left.carousel-control{ "href" => "#carousel-photos", "data-slide" => "prev" }
+      %span.glyphicon.glyphicon-chevron-left
+    %a.right.carousel-control{ "href" => "#carousel-photos", "data-slide" => "next" }
+      %span.glyphicon.glyphicon-chevron-right
+
+  %h2 
+    Location
+    %small Courtesy of Google Maps
+  .flexible_container
+    %iframe{:frameborder => "0", :height => "600", :src => "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3675.4924594340782!2d-109.8916!3d22.8952!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x86af4b05e07332d5%3A0x1d97c31ed70a5b6d!2sMisiones+del+Cabo+Resort!5e0!3m2!1sen!2sus!4v1393356300749", :style => "border:0", :width => "800"}

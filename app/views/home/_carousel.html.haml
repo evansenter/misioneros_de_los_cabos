@@ -1,7 +1,7 @@
 #carousel-homepage.carousel.slide{ "data-ride" => "carousel" }
   %ol.carousel-indicators
     - (1..5).each do |i|
-      %li{ "data-target" => "#carousel-homepage", "data-slide-to" => 1, "class" => (i == 1 ? "active" : "") }
+      %li{ "data-target" => "#carousel-homepage", "data-slide-to" => i - 1, "class" => (i == 1 ? "active" : "") }
   
   .carousel-inner
     - (1..5).each do |i|
