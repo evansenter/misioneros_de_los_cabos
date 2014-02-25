@@ -22,7 +22,7 @@ class ContactInfo < ActiveRecord::Base
       region:      state,
       postal_code: zip,
       country:     country
-    ).to_s.gsub(/\s+/, " ")
+    ).to_s
   end
   
   private
