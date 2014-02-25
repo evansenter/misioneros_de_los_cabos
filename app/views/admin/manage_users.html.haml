@@ -12,7 +12,8 @@
       %th Phone Number
       %th Permissions
       %th Set Role
-  = render partial: "user", collection: @users
+  %tbody
+    = render partial: "user", collection: @users
 
 .row
   = paginate @users
