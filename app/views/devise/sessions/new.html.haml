@@ -6,9 +6,10 @@
       = render partial: "shared/form_field", locals: { form: form, resource: resource, field: :password, type: :password_field }
 
       .form-group
-        .col-sm-12.text-right
+        .col-md-10.text-right
           .btn-group
             = form.submit "Sign in", class: "btn btn-success"
+            = link_to("Forgot password?", new_user_password_path, class: "btn btn-warning")
             = link_to("Sign up", register_path, class: "btn btn-primary")
           
     

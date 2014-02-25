@@ -1,14 +1,27 @@
-%h2 Change your password
-= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :put }) do |f|
-  = devise_error_messages!
-  = f.hidden_field :reset_password_token
-  %div
-    = f.label :password, "New password"
-    %br/
-    = f.password_field :password, :autofocus => true
-  %div
-    = f.label :password_confirmation, "Confirm new password"
-    %br/
-    = f.password_field :password_confirmation
-  %div= f.submit "Change my password"
-= render "devise/shared/links"
+%h1 Change your password
+
+.row.top-buffer-xl
+  .col-md-6.col-md-offset-3
+    = form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :put }) do |form|
+      = form.hidden_field :reset_password_token
+      
+      .form-group
+        .row
+          = form.label :password, class: "col-md-2 control-label"
+          .col-md-8
+            = form.password_field :password, class: "form-control"
+            - if resource.errors[:password].present?
+              %span.glyphicon.glyphicon-remove.form-control-feedback
+
+        .row.top-buffer
+          = form.label :password_confirmation, "Confirm", class: "col-md-2 control-label"
+          .col-md-8
+            = form.email_field :password_confirmation, class: "form-control"
+            - if resource.errors[:password_confirmation].present?
+              %span.glyphicon.glyphicon-remove.form-control-feedback
+
+        .row.top-buffer
+          .col-md-10.text-right
+            .btn-group
+              = form.submit "Change my password", class: "btn btn-success"
+                
