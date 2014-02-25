@@ -15,7 +15,7 @@
       .form-group
         = form.label :password_confirmation, "Confirm", class: "col-md-2 control-label"
         .col-md-8
-          = form.email_field :password_confirmation, class: "form-control"
+          = form.password_field :password_confirmation, class: "form-control"
           - if resource.errors[:password_confirmation].present?
             %span.glyphicon.glyphicon-remove.form-control-feedback
 
