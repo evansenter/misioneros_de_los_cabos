@@ -12,7 +12,6 @@ gem "uglifier", ">= 1.3.0"               # Use Uglifier as compressor for JavaSc
 gem "jquery-rails"                       # Use jquery as the JavaScript library
 gem "jbuilder", "~> 1.2"                 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem "unicorn"                            # Use unicorn as the app server
-gem "pony"                               # PONY MAIL FUCK YES
 gem "newrelic_rpm"                       # Track issues
 gem "kaminari"                           # Model pagination
 gem "formtastic"                         # Make forms eas(ier)
