@@ -1,0 +1,8 @@
+es:
+  navigation:
+    photos:          "Fotos"
+    notices:         "Avisos"
+    uploads:         "Documentos"
+    maintenance_fee: "Cuota de Mantenimiento"
+    committees:      "Comités"
+    admin:           "Administración"

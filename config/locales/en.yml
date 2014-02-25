@@ -20,6 +20,13 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  navigation:
+    photos:          "Photos"
+    notices:         "Notices"
+    uploads:         "Documents"
+    maintenance_fee: "Maintenance Fee"
+    committees:      "Committees"
+    admin:           "Admin"
   devise:
     registrations:
       signed_up: "Thank you for registering. An administrator will have to authorize your account to grant full access."

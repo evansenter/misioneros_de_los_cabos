@@ -16,20 +16,32 @@
 @import "bootstrap";
 @import "bootstrap/theme";
 
-body {
-  padding-top: 70px;
+html, body {
+  height: 100%;
 }
 
-.light-blue-gradient {
-  background-image: linear-gradient(to bottom, #fff 0%, #eaf0f7 100%);
-  background-repeat: repeat-x;
+#wrap {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  /* Negative indent footer by it's height */
+  margin: 0 auto -160px;
 }
 
-.footer {
-  border-top: 1px solid #eee;
-  margin-top: 40px;
+#wrap > .container {
+  padding-top: 60px;
+}
+
+#push, #footer {
+  height: 160px;
+}
+
+#footer {
+  border-top: 1px solid #ddd;
   padding-top: 20px;
   padding-bottom: 30px;
+  background-image: linear-gradient(to top, #fff 0%, #f8f8f8 100%);
+  background-repeat: repeat-x;
 }
 
 .bottom-buffer-sm { 
@@ -44,10 +56,46 @@ body {
   margin-top: 40px; 
 }
 
+.navbar-header .navbar-brand, .carousel h1 {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
+  font-weight: 100;
+  font-size: 1.5em;
+}
+
+.carousel .carousel-caption {
+  left: 10%;
+  right: 10%;
+}
+
+.carousel h1 {
+  font-size: 3.5em;
+  letter-spacing: .1em;
+}
+
+.carousel .carousel-control {
+  width: 10%;
+}
+
+.light-blue-gradient {
+  background-image: linear-gradient(to bottom, #fff 0%, #eaf0f7 100%);
+  background-repeat: repeat-x;
+}
+
 .colorize-blue {
   color: #428bca;
 }
 
 .colorize-red {
   color: #c12e2a;
+}
+
+.language_select {
+  height: 50px;
+  padding: 6px 0 0 16px;
+}
+
+.language_flag {
+  display: block;
+  height: 16px;
+  margin-bottom: 6px;
 }

@@ -8,10 +8,11 @@
     = csrf_meta_tags
     %meta{:content => "width=device-width, initial-scale=1.0, user-scalable=no", :name => "viewport"}
   %body{ role: "document" }
-    = render "shared/navigation"
+    #wrap
+      = render "shared/navigation"
     
-    .container{ role: "main" }
-      = render "shared/flash"
-      = yield
-      
+      .container{ role: "main" }
+        = render "shared/flash"
+        = yield
+      #push  
     = render "shared/footer"
