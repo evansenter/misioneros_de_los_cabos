@@ -5,7 +5,7 @@ class HomeController < ApplicationController
   
   before_filter :require_authorized_user!, only: [:maintenance_fee]
   
-  NUMBER_OF_HOMEPAGE_NOTICES = 1
+  NUMBER_OF_HOMEPAGE_NOTICES = 2
   
   def index
     gon.current_tab = "home"
