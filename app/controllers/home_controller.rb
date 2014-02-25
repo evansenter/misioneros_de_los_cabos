@@ -5,9 +5,11 @@ class HomeController < ApplicationController
   
   before_filter :require_authorized_user!, only: [:maintenance_fee]
   
+  NUMBER_OF_HOMEPAGE_NOTICES = 1
+  
   def index
     gon.current_tab = "home"
-    @notices        = Notice.order("created_at DESC").limit(2)
+    @notices        = Notice.order("created_at DESC").limit(NUMBER_OF_HOMEPAGE_NOTICES)
   end
   
   def committees
