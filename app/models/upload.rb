@@ -3,6 +3,7 @@ class Upload < ActiveRecord::Base
     ["ARC Documents",     "arc_documents"],
     ["Financial Reports", "financial_reports"],
     ["HOA Documents",     "hoa_documents"],
+    ["Gazette",           "gazette"],
     ["Maintenance",       "maintenance"],
     ["Minutes",           "minutes"],
     ["Projects",          "projects"]
