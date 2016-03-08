@@ -1,16 +1,16 @@
 source "https://rubygems.org"
 
-ruby "2.1.0"
+ruby "2.3.0"
 
-gem "rails", "4.0.2"                     # Bundle edge Rails instead: gem "rails", github: "rails/rails"
+gem "rails", "4.2.6"                     # Bundle edge Rails instead: gem "rails", github: "rails/rails"
 gem "mysql2"                             # Use MySQL as the database for ActiveRecord
 gem "devise"                             # Devise for authentication
 gem "haml-rails"                         # HAML generators
-gem "sass-rails", "~> 4.0.0"             # Use SCSS for stylesheets
-gem "bootstrap-sass", "~> 3.1.0"         # Bootstrap 3 for pretty things
-gem "uglifier", ">= 1.3.0"               # Use Uglifier as compressor for JavaScript assets
+gem "sass-rails"                         # Use SCSS for stylesheets
+gem "bootstrap-sass"                     # Bootstrap 3 for pretty things
+gem "uglifier"                           # Use Uglifier as compressor for JavaScript assets
 gem "jquery-rails"                       # Use jquery as the JavaScript library
-gem "jbuilder", "~> 1.2"                 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
+gem "jbuilder"                           # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem "unicorn"                            # Use unicorn as the app server
 gem "newrelic_rpm"                       # Track issues
 gem "kaminari"                           # Model pagination
